@@ -1,0 +1,27 @@
+<h1>Listing distro_versions</h1>
+
+<table>
+  <tr>
+    <th>Distro</th>
+    <th>Name</th>
+    <th>Issued on</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @distro_versions.each do |distro_version| %>
+  <tr>
+    <td><%= distro_version.distro.name %></td>
+    <td><%= distro_version.name %></td>
+    <td><%= distro_version.issued_on %></td>
+    <td><%= link_to 'Show', distro_version %></td>
+    <td><%= link_to 'Edit', edit_distro_version_path(distro_version) %></td>
+    <td><%= link_to 'Destroy', distro_version, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Distro version', new_distro_version_path %>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<%#= image_tag @distro.logo.url(:large)%>
+<%#= image_tag @distro.logo.url(:medium) %>
+
+<div style="float:right">
+  <%= image_tag @distro.logo.url(:thumb) %><br />
+  Homepage: <%= link_to @distro.url, @distro.url %>
+</div>
+
+<h1><%= @distro.name %></h1>
+
+<p>
+  <b>Family name:</b>
+  <%= link_to @distro.family.name, @distro.family %>
+</p>
+
+<h2>Versions</h2>
+
+<ul>
+  <%  @distro.distro_versions.each do |distro_version| %>
+    <li><%= link_to distro_version.name, distro_version %></li>
+  <%end%>
+</ul>
+
+

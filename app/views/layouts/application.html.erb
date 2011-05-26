@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linuxmart</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="header">
+   <span style="color:blue">Linux</span><span style="color:green">Mart</span>
+</div>
+<div id="nav">
+  <ul>
+    <li><%= link_to "Main", root_path %></li>
+    <li><%= link_to "Families", families_path %></li>
+    <li><%= link_to "Distros", distros_path %></li>
+  </ul>
+</div>
+
+<div id="left-sidebar">
+  <h2>Latest releases</h2>
+  <ul>
+    <% DistroVersion.latest.each do |version| %>
+      <li><span class="date"><%= version.issued_on %></span> <%= link_to "#{version.distro.name} #{version.name}", version %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="main">
+  <%= yield %>
+</div>
+</body>
+</html>

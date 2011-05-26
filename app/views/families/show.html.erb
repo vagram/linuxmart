@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @family.name %></h1>
+<h2>Distributions:</h2>
+<ul>
+  <% @family.distros.each do |distro| %>
+    <li> <%= link_to distro.name, distro %></li>
+  <% end %>
+</ul>
+

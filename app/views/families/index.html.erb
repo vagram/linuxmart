@@ -1,0 +1,14 @@
+<h1>Families</h1>
+
+<% @families.each do |family| %>
+  <h2><%= link_to family.name, family %></h2>
+  <ul> 
+    <%  family.distros.each do |distro| %>
+      <li><%= link_to distro.name, distro %></li>
+    <%end%>
+  </ul>
+<%end%>
+
+<br />
+
+<% link_to 'New Family', new_family_path %>

@@ -1,0 +1,18 @@
+class CreateProducts < ActiveRecord::Migration
+  def self.up
+    create_table :products do |t|
+      t.string :name
+      t.integer :family_id 
+      t.integer :platform_id
+      t.integer :distro_id
+      t.integer :distro_version_id
+      t.integer :spin_id
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :products
+  end
+end

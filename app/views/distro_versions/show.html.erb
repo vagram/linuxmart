@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @distro_version.distro.name %>
+  <%= @distro_version.name %>
+</h1>
+
+<p>
+  <b>Issued:</b>
+  <%= @distro_version.issued_on %>
+</p>
+
+<p>
+  <b>Code name:</b>
+  <%= @distro_version.human_name %>
+</p>
+<h2>Products</h2>
+<ul>
+  <% @distro_version.products.each do |product| %>
+    <li><%= link_to product.name, product %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_distro_version_path(@distro_version) %> |
+<%= link_to 'Back', distro_versions_path %>

@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @platform.name %></h1>
+<ul>
+  <%  @platform.products.each do |product| %>
+   <li> <%= link_to product.name, product %></li>
+  <% end %>
+</ul> 
+
+

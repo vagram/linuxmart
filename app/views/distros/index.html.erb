@@ -1,0 +1,6 @@
+<h1>Distributions</h1>
+<ul>
+<% @distros.each do |distro| %>
+    <li><h2><%= link_to distro.name,distro %></h2></li>
+<% end %>
+</ul>

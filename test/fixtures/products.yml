@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  platform_id: 
+  distro_id: 1
+  distro_version_id: 1
+  spin_id: 1
+
+two:
+  name: MyString
+  platform_id: 
+  distro_id: 1
+  distro_version_id: 1
+  spin_id: 1

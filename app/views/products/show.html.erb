@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b></b>
+  <h1><%= @product.name %></h1>
+</p>
+
+<p>
+  <b>Platform:</b>
+  <%= link_to @product.platform.name, @product.platform %>
+</p>
+
+<p>
+  <b>Distro:</b>
+  <%=link_to  @product.distro.name, @product.distro %>
+</p>
+
+<p>
+  <b>Distro version:</b>
+  <%= @product.distro_version.name %>
+</p>
+
+<p>
+  <b>Spin:</b>
+  <%= link_to  @product.spin.name, @product.spin %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

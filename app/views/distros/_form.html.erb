@@ -1,0 +1,34 @@
+<%= form_for(@distro, :html => { :multipart => true }) do |f| %>
+  <% if @distro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@distro.errors.count, "error") %> prohibited this distro from being saved:</h2>
+
+      <ul>
+      <% @distro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :family_id %><br />
+    <%= f.collection_select :family_id, Family.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :logo %><br />
+    <%= f.file_field :logo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

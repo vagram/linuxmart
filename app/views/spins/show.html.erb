@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @spin.name %></h1>
+
+<h2>Products:</h2>
+<ul>
+  <%  @spin.products.each do |product| %>
+  <li><%= link_to product.name, product %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', spins_path %>
