@@ -1,4 +1,6 @@
 Linuxmart::Application.routes.draw do
+  devise_for :users
+
   resources :humannames
 
   resources :products

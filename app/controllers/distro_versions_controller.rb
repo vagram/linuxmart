@@ -1,4 +1,6 @@
 class DistroVersionsController < ApplicationController
+  before_filter :authenticate_user!, :except => [ :index, :show ]
+
   # GET /distro_versions
   # GET /distro_versions.xml
   def index

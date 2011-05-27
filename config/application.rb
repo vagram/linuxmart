@@ -38,5 +38,15 @@ module Linuxmart
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => 'linuxmart.net',
+      :user_name            => 'vagram@linuxmart.net',
+      :password             => ENV['LINUXMART_MAILER_PASSWORD'],
+      :authentication       => 'plain',
+      :enable_starttls_auto => true
+    }
   end
 end

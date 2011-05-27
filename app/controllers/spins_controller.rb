@@ -1,4 +1,5 @@
 class SpinsController < ApplicationController
+  before_filter :authenticate_user!, :except => [ :index, :show ]
   # GET /spins
   # GET /spins.xml
   def index

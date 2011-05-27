@@ -1,6 +1,6 @@
 class DistrosController < ApplicationController
+  before_filter :authenticate_user!, :except => [ :index, :show ]
   before_filter :find_distro, :only => [ :show, :edit, :update, :destroy ]
-  before_filter :fuck_it, :only => [ :edit ]
 
   # GET /distros
   # GET /distros.xml

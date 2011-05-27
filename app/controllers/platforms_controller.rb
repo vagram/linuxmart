@@ -1,4 +1,5 @@
 class PlatformsController < ApplicationController
+  before_filter :authenticate_user!, :except => [ :index, :show ]
   # GET /platforms
   # GET /platforms.xml
   def index
