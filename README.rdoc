@@ -1,0 +1,10 @@
+= Linumart project.
+
+Objectieves:
+
+* Popularize Linux as a platform for operating systems.
+* Describe all Linux Distributions.
+* Follow to all new  Linux Distributions.
+* Provide useful and easy to understand documentation regarding Linux Distributions.
+* Have a fun by working with Ruby on Rails.
+
