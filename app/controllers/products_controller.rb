@@ -82,4 +82,10 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+private
+  def check_permission
+    if !current_user.admin
+      redirect_to root_path
+    end
+  end
 end

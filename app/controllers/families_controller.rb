@@ -87,7 +87,7 @@ class FamiliesController < ApplicationController
 private
   def check_permission
     if !current_user.admin
-      redirect_to @distro
+      redirect_to root_path
     end
   end
 end
