@@ -1,7 +1,7 @@
 class DistrosController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
   before_filter :find_distro, :only => [ :show, :edit, :update, :destroy ]
-
+  before_filter :check_permission, :except => [:index, :show ]
   # GET /distros
   # GET /distros.xml
   def index
@@ -83,7 +83,9 @@ private
     @distro = Distro.find(params[:id])
   end
 
-  def fuck_it
-    redirect_to @distro
+  def check_permission
+    if !current_user.admin
+      redirect_to @distro
+    end
   end
 end
