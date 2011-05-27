@@ -1,5 +1,6 @@
 class SpinsController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
+  before_filter :check_permission, :except => [:index, :show ]
   # GET /spins
   # GET /spins.xml
   def index
@@ -79,6 +80,18 @@ class SpinsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(spins_url) }
       format.xml  { head :ok }
+    end
+  end
+private
+  def check_permission
+    if !current_user.admin
+      redirect_to @distro
+    end
+  end
+private
+  def check_permission
+    if !current_user.admin
+      redirect_to @distro
     end
   end
 end

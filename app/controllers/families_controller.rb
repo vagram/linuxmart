@@ -1,5 +1,7 @@
 class FamiliesController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
+  before_filter :check_permission, :except => [:index, :show ]
+
   # GET /families
   # GET /families.xml
   def index
@@ -79,6 +81,13 @@ class FamiliesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(families_url) }
       format.xml  { head :ok }
+    end
+  end
+
+private
+  def check_permission
+    if !current_user.admin
+      redirect_to @distro
     end
   end
 end

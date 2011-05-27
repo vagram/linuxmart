@@ -1,5 +1,6 @@
 class DistroVersionsController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
+  before_filter :check_permission, :except => [:index, :show ]
 
   # GET /distro_versions
   # GET /distro_versions.xml
@@ -80,6 +81,13 @@ class DistroVersionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(distro_versions_url) }
       format.xml  { head :ok }
+    end
+  end
+
+private
+  def check_permission
+    if !current_user.admin
+      redirect_to @distro
     end
   end
 end
