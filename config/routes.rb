@@ -1,5 +1,13 @@
 Linuxmart::Application.routes.draw do
+  get "users/index"
+
+  get "users/show"
+
+  resources :posts
+
   devise_for :users
+
+  resources :users
 
   resources :products
 

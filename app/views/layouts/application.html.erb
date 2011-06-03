@@ -10,7 +10,7 @@
 <div style="float:right">
  
   <%  if user_signed_in? %>
-    <%= current_user.email %>
+    <%= link_to current_user.email,edit_user_registration_path %>
     <%= current_user.admin? ? "Admin" : ":)" %>
     <%= link_to 'Sign out', destroy_user_session_path %>
   <% else %>
@@ -27,6 +27,7 @@
     <li><%= link_to "Main", root_path %></li>
     <li><%= link_to "Families", families_path %></li>
     <li><%= link_to "Distros", distros_path %></li>
+    <li><%= link_to "Blog", posts_path %></li>
   </ul>
 </div>
 
